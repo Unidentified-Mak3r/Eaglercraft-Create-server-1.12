@@ -32,7 +32,7 @@ chunk-gc:
   load-threshold: 0
 ticks-per:
   animal-spawns: 400
-  monster-spawns: .5
+  monster-spawns: .01
   autosave: 6000
 aliases: now-in-commands.yml
 database:
