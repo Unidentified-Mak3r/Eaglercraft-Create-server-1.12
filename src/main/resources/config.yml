@@ -1,0 +1,17 @@
+# HunterCompass configuration
+# Keep this at 20 ticks for once-per-second compass synchronization.
+tracking-interval-ticks: 20
+messages:
+  prefix: '&6[HunterCompass]&r '
+  bound: '&aCompass bound to &e%target%&a.'
+  already-bound: '&cThis compass is already bound to &e%target%&c. Use /unbindcompass first.'
+  unbound: '&aCompass target removed.'
+  not-bound: '&cThe compass in your hand is not bound.'
+  hold-compass: '&cHold a compass first.'
+  target-offline: '&eTarget Offline: &6%target%&e. Pointing to last known location.'
+  target-info:
+    - '&eTarget: &f%target%'
+    - '&eStatus: &f%status%'
+    - '&eDistance: &f%distance%'
+    - '&eWorld: &f%world%'
+    - '&eLocation: &f%x%, %y%, %z%'
