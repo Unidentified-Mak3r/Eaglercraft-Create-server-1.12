@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.eaglercraft</groupId>
+    <artifactId>huntercompass</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>HunterCompass</name>
+    <description>Compass target tracking plugin for Eaglercraft-compatible 1.12/legacy Bukkit servers.</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!--
+            Eaglercraft server bundles are commonly based on legacy CraftBukkit/Paper internals.
+            This system-scoped dependency points at this repository's patched server jar so the
+            plugin compiles against the exact API/NMS package available in the included server.
+        -->
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>eaglercraft-patched-server</artifactId>
+            <version>1.8.8-eaglercraft</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/server/cache/patched_1.8.8.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>HunterCompass</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
